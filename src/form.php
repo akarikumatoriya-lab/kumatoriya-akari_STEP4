@@ -13,40 +13,45 @@
 
         <div class="form-group">
             <label>名前：</label>
-            <input type="text" name="name" value="<?php echo $_POST['name'] ?? ''; ?>">
+            <input type="text" id="name" name="name"
+            value="<?= htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
         </div>
 
         <div class="form-group">
             <label>年齢：</label>
-            <input type="text" name="age" value="<?php echo $_POST['age'] ?? ''; ?>">
+            <input type="text" id="age" name="age"
+            value="<?= htmlspecialchars($_POST['age'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
         </div>
-        
+
         <div class="form-group">
             <label>電話番号：</label>
-            <input type="tel" name="phone" value="<?php echo $_POST['phone'] ?? ''; ?>">
+            <input type="tel" id="phone" name="phone"
+            value="<?= htmlspecialchars($_POST['phone'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
         </div>
-        
+
         <div class="form-group">
             <label>メール：</label>
-            <input type="email" name="email" value="<?php echo $_POST['email'] ?? ''; ?>">
+            <input type="email" id="email" name="email"
+            value="<?= htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
         </div>
 
         <div class="form-group">
             <label>住所：</label>
-            <input type="text" name="address" value="<?php echo $_POST['address'] ?? ''; ?>">
+            <input type="text" id="address" name="address"
+            value="<?= htmlspecialchars($_POST['address'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
         </div>
 
         <div class="form-group">
             <label>質問：</label>
-            <textarea name="question"><?php echo $_POST['question'] ?? ''; ?></textarea>
+            <textarea id="question" name="question"><?= htmlspecialchars($_POST['question'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
         </div>
 
         <div class="form-group">
-        <label>性別：</label>
-            <select name="gender">
+        <label for="gender">性別：</label>
+            <select id="gender" name="gender">
                 <option value="">選択してください</option>
-                <option value="男性" <?php if(($_POST['gender'] ?? '') === '男性') echo 'selected'; ?>>男性</option>
-                <option value="女性" <?php if(($_POST['gender'] ?? '') === '女性') echo 'selected'; ?>>女性</option>
+                <option value="男性" <?= (($_POST['gender'] ?? '') === '男性') ? 'selected' : '' ?>>男性</option>
+                <option value="女性" <?= (($_POST['gender'] ?? '') === '女性') ? 'selected' : '' ?>>女性</option>
             </select>
         </div>
 
